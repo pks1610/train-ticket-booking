@@ -1,0 +1,119 @@
+<h1>{{title}}</h1>
+
+<div *ngIf="flag">
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit(bookingForm)">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label> &nbsp;
+    <label class="center-block">No. of Seats:
+      <input type="number" class="form-control" formControlName="count">
+    </label>&nbsp;
+    <button type="submit" [disabled]="bookingForm.invalid">Book</button>
+    <div class="err">{{error}}</div>
+  </form>
+</div>
+
+<div class="conformation-container" *ngIf="flag">
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div  class="seat" *ngIf="seat.row === 1" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div  class="seat" *ngIf="seat.row === 2" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div class="seat" *ngIf="seat.row === 3" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div *ngFor ="let seat of bookingInfo">
+      <div class="seat" *ngIf="seat.row === 4" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div class="seat" *ngIf="seat.row === 5" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div class="seat" *ngIf="seat.row === 6" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div class="seat" *ngIf="seat.row === 7" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div class="seat" *ngIf="seat.row === 8" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div class="seat" *ngIf="seat.row === 9" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div class="seat" *ngIf="seat.row === 10" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div class="seat" *ngIf="seat.row === 11" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="seat-row">
+    <div  *ngFor ="let seat of bookingInfo">
+      <div class="seat" *ngIf="seat.row === 12" >
+        <label class="seat-label" [ngClass] = "seat.status=== 'booked' ? 'booked': 'available'">
+          {{seat.seat}}</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conformation-container" *ngIf="!flag">
+  <div> <h3>{{res}}</h3></div>
+  <div class="new-booking">
+    <button *ngIf="!flag" (click)="openBookingForm()"> <h4>New Booking</h4></button>
+  </div>
+</div>
